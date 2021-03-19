@@ -45,28 +45,53 @@ $(document).ready(function(){
 
    const cat_girl = cat.filter((item) => item.sesso == "femmina");
 
+  const opacitym = [];
+
    cat_man.forEach((item) => {
+      var newitem;
       let opacity = "";
-   if (item.eta >= 10) {
-       opacity= 1;
+      if (item.eta >= 10) {
+        opacity= 1;
+        newitem = {... item, opacity: 1};
       }else {
-      opacity= 0.5;
+        newitem ={... item, opacity: 0.5};
+        opacity= 0.5;
       }
     $('#lista').append(`<li class= "maschio">${item.nome} ed il suo sesso è: ${item.sesso} <i style = "opacity:${opacity};" class="fas fa-ribbon"></i> </li>`)
-
+    opacitym.push(newitem);
    });
+
+   console.log(opacitym);
+
+   const opacityf= [];
+
    cat_girl.forEach((item) => {
+     var neewitem;
      let opacity = "";
-  if (item.eta >= 10) {
-      opacity= 1;
+     if (item.eta >= 10) {
+       newitem = {... item, opacity: 1};
+        opacity= 1;
      }else {
-     opacity= 0.5;
+         newitem ={... item, opacity: 0.5};
+        opacity= 0.5;
      }
+     opacityf.push(newitem);
      $('#lista').append(`<li class= "femmina">${item.nome} ed il suo sesso è: ${item.sesso} <i style = "opacity:${opacity};" class="fas fa-ribbon"></i> </li>`)
    });
-})
+   console.log(opacityf);
+
 
 // Milestone 3 Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio,
-// inserendo solamente nome e colore e colore e opacità del fiocco per ogni gatto.
+// inserendo solamente nome colore  e opacità del fiocco per ogni gatto.
 
-  // const new_cat = 
+  const cat2 = [...opacityf, ... opacitym];
+  
+  new_cat= cat2.map((item)=>{
+    const{nome,colore,opacity}=item;
+    return {nome, colore, opacity};
+  });
+  console.log(new_cat);
+
+
+
+})
