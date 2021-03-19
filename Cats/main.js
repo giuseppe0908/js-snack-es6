@@ -29,6 +29,12 @@ $(document).ready(function(){
       colore: "grigio",
       sesso: "femmina",
     },
+    {
+      nome: "gatta",
+      eta: 3,
+      colore: "giallo",
+      sesso: "femmina",
+    },
   ];
   // Tramite la funzione.forEach(), stampare in pagina tutti
   // i gattini, ciascuno con il proprio colore e il proprio nome.
@@ -85,13 +91,11 @@ $(document).ready(function(){
 // inserendo solamente nome colore  e opacità del fiocco per ogni gatto.
 
   const cat2 = [...opacityf, ... opacitym];
-  
+
   new_cat= cat2.map((item)=>{
     const{nome,colore,opacity}=item;
     return {nome, colore, opacity};
   });
   console.log(new_cat);
-
-
 
 })
