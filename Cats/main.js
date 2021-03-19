@@ -54,7 +54,6 @@ $(document).ready(function(){
       }
     $('#lista').append(`<li class= "maschio">${item.nome} ed il suo sesso è: ${item.sesso} <i style = "opacity:${opacity};" class="fas fa-ribbon"></i> </li>`)
 
-
    });
    cat_girl.forEach((item) => {
      let opacity = "";
@@ -66,3 +65,8 @@ $(document).ready(function(){
      $('#lista').append(`<li class= "femmina">${item.nome} ed il suo sesso è: ${item.sesso} <i style = "opacity:${opacity};" class="fas fa-ribbon"></i> </li>`)
    });
 })
+
+// Milestone 3 Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio,
+// inserendo solamente nome e colore e colore e opacità del fiocco per ogni gatto.
+
+  // const new_cat = 
