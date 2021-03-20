@@ -55,36 +55,29 @@ $(document).ready(function(){
 
    cat_man.forEach((item) => {
       var newitem;
-      let opacity = "";
       if (item.eta >= 10) {
-        opacity= 1;
         newitem = {... item, opacity: 1};
       }else {
         newitem ={... item, opacity: 0.5};
-        opacity= 0.5;
       }
-    $('#lista').append(`<li class= "maschio">${item.nome} ed il suo sesso è: ${item.sesso} <i style = "opacity:${opacity};" class="fas fa-ribbon"></i> </li>`)
+
+    $('#lista').append(`<li class= "maschio">${item.nome} ed il suo sesso è: ${item.sesso} <i style = "opacity:${newitem.opacity};" class="fas fa-ribbon"></i> </li>`)
     opacitym.push(newitem);
    });
-
-   console.log(opacitym);
 
    const opacityf= [];
 
    cat_girl.forEach((item) => {
      var neewitem;
-     let opacity = "";
      if (item.eta >= 10) {
        newitem = {... item, opacity: 1};
-        opacity= 1;
      }else {
-         newitem ={... item, opacity: 0.5};
-        opacity= 0.5;
+       newitem ={... item, opacity: 0.5};
      }
+
+     $('#lista').append(`<li class= "femmina">${item.nome} ed il suo sesso è: ${item.sesso} <i style = "opacity:${newitem.opacity};" class="fas fa-ribbon"></i> </li>`)
      opacityf.push(newitem);
-     $('#lista').append(`<li class= "femmina">${item.nome} ed il suo sesso è: ${item.sesso} <i style = "opacity:${opacity};" class="fas fa-ribbon"></i> </li>`)
    });
-   console.log(opacityf);
 
 
 // Milestone 3 Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio,
